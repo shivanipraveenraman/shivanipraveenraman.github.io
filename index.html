@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Hero Section</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(
+        to right,
+        #f3f3f3 0%,
+        #f3f3f3 50%,
+        #e7f6f3 50%,
+        #e7f6f3 100%
+      );
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+      position:relative;
+    }
+
+    /* Bottom background section */
+    body::after{
+      content:"";
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:140px;
+      background:#dcdcdc;
+      z-index:0;
+    }
+
+    /* Left beige block */
+    body::before{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:140px;
+      width:380px;
+      height:220px;
+      background:#f6e6bf;
+      z-index:0;
+    }
+
+    .container{
+      width:1200px;
+      background:#fff;
+      border-radius:22px;
+      padding:70px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:80px;
+      position:relative;
+      z-index:2;
+      box-shadow:0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    /* Left Section */
+    .image-section{
+      position:relative;
+      width:390px;
+    }
+
+    .image-box{
+      background:#f4f4f6;
+      border-radius:16px;
+      overflow:hidden;
+      height:430px;
+    }
+
+    .image-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .social-box{
+      position:absolute;
+      bottom:-25px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#fff;
+      padding:22px 35px;
+      border-radius:10px;
+      display:flex;
+      gap:28px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .social-box a{
+      text-decoration:none;
+      color:#9b30ff;
+      font-size:20px;
+      transition:0.3s;
+    }
+
+    .social-box a:hover{
+      transform:translateY(-4px);
+    }
+
+    /* Right Section */
+    .content{
+      flex:1;
+      max-width:550px;
+    }
+
+    .content h1{
+      font-size:58px;
+      line-height:1.15;
+      color:#111;
+      font-weight:700;
+      margin-bottom:28px;
+    }
+
+    .content p{
+      font-size:18px;
+      line-height:1.9;
+      color:#5c6677;
+      margin-bottom:22px;
+    }
+
+    .buttons{
+      margin-top:35px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 34px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:17px;
+      transition:0.3s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn-primary{
+      background:#9b30ff;
+      color:#fff;
+      box-shadow:0 8px 20px rgba(155,48,255,0.3);
+    }
+
+    .btn-primary:hover{
+      background:#8220db;
+    }
+
+    .btn-outline{
+      border:1px solid #ddd;
+      color:#111;
+      background:#fff;
+    }
+
+    .btn-outline:hover{
+      background:#f7f7f7;
+    }
+
+    /* Responsive */
+    @media(max-width:1100px){
+
+      body{
+        overflow:auto;
+        padding:40px 20px;
+      }
+
+      .container{
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        padding:50px 30px 80px;
+      }
+
+      .content h1{
+        font-size:42px;
+      }
+
+      .buttons{
+        justify-content:center;
+      }
+
+      .image-section{
+        width:100%;
+        max-width:380px;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .content h1{
+        font-size:34px;
+      }
+
+      .content p{
+        font-size:16px;
+      }
+
+      .btn{
+        width:100%;
+        justify-content:center;
+      }
+
+      .social-box{
+        gap:20px;
+        padding:18px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Left Side -->
+    <div class="image-section">
+
+      <div class="image-box">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+          alt="Profile">
+      </div>
+
+      <div class="social-box">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fas fa-globe"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-behance"></i></a>
+      </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="content">
+
+      <h1>
+        I am Professional User Experience Designer
+      </h1>
+
+      <p>
+        I design and develop services for customers specializing
+        creating stylish, modern websites, web services and online
+        stores. My passion is to design digital user experiences.
+      </p>
+
+      <p>
+        I design and develop services for customers specializing
+        creating stylish, modern websites, web services.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#" class="btn btn-primary">
+          My Projects
+        </a>
+
+        <a href="#" class="btn btn-outline">
+          <i class="fa-solid fa-download"></i>
+          Download CV
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
