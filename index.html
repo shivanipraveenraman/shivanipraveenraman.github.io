@@ -13,76 +13,99 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(
+      font-family:'Poppins', sans-serif;
+      background:linear-gradient(
         to right,
         #f3f3f3 0%,
         #f3f3f3 50%,
         #e7f6f3 50%,
         #e7f6f3 100%
       );
+
       min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      overflow:hidden;
+
+      /* IMPORTANT */
+      overflow-y:auto;
+      overflow-x:hidden;
+
       position:relative;
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+
+      padding:60px 20px;
+      gap:60px;
     }
 
-    /* Bottom background section */
+    /* Bottom background */
     body::after{
       content:"";
-      position:absolute;
+      position:fixed;
       bottom:0;
       left:0;
       width:100%;
       height:140px;
       background:#dcdcdc;
-      z-index:0;
+      z-index:-2;
     }
 
-    /* Left beige block */
+    /* Left beige shape */
     body::before{
       content:"";
-      position:absolute;
+      position:fixed;
       left:0;
       bottom:140px;
       width:380px;
       height:220px;
       background:#f6e6bf;
-      z-index:0;
+      z-index:-1;
     }
 
     .container{
-      width:1200px;
+
+      width:100%;
+      max-width:1200px;
+
       background:#fff;
-      border-radius:22px;
+
+      border-radius:24px;
+
       padding:70px;
+
       display:flex;
       align-items:center;
       justify-content:space-between;
+
       gap:80px;
-      position:relative;
-      z-index:2;
+
       box-shadow:0 20px 60px rgba(0,0,0,0.08);
+
+      position:relative;
     }
 
-    /* Left Section */
+    /* LEFT */
     .image-section{
       position:relative;
       width:390px;
+      flex-shrink:0;
     }
 
     .image-box{
       background:#f4f4f6;
-      border-radius:16px;
+      border-radius:18px;
       overflow:hidden;
       height:430px;
     }
@@ -98,11 +121,16 @@
       bottom:-25px;
       left:50%;
       transform:translateX(-50%);
+
       background:#fff;
-      padding:22px 35px;
-      border-radius:10px;
+
+      padding:20px 35px;
+
+      border-radius:12px;
+
       display:flex;
       gap:28px;
+
       box-shadow:0 12px 30px rgba(0,0,0,0.08);
     }
 
@@ -115,12 +143,12 @@
 
     .social-box a:hover{
       transform:translateY(-4px);
+      color:#6d11cf;
     }
 
-    /* Right Section */
+    /* RIGHT */
     .content{
       flex:1;
-      max-width:550px;
     }
 
     .content h1{
@@ -147,11 +175,13 @@
 
     .btn{
       padding:16px 34px;
-      border-radius:6px;
+      border-radius:8px;
       text-decoration:none;
       font-weight:600;
       font-size:17px;
+
       transition:0.3s ease;
+
       display:inline-flex;
       align-items:center;
       gap:10px;
@@ -164,29 +194,23 @@
     }
 
     .btn-primary:hover{
-      background:#8220db;
+      background:#7e1ee0;
     }
 
     .btn-outline{
       border:1px solid #ddd;
-      color:#111;
       background:#fff;
+      color:#111;
     }
 
     .btn-outline:hover{
-      background:#f7f7f7;
+      background:#f8f8f8;
     }
 
-    /* Responsive */
+    /* TABLET */
     @media(max-width:1100px){
 
-      body{
-        overflow:auto;
-        padding:40px 20px;
-      }
-
       .container{
-        width:100%;
         flex-direction:column;
         text-align:center;
         padding:50px 30px 80px;
@@ -206,7 +230,16 @@
       }
     }
 
+    /* MOBILE */
     @media(max-width:600px){
+
+      body{
+        padding:30px 15px;
+      }
+
+      .container{
+        padding:35px 20px 70px;
+      }
 
       .content h1{
         font-size:34px;
@@ -222,18 +255,138 @@
       }
 
       .social-box{
-        gap:20px;
+        gap:18px;
         padding:18px 24px;
       }
+
+      .image-box{
+        height:360px;
+      }
     }
+    
+    /* SERVICES GRID */
+
+.services-grid{
+  flex:1;
+
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+
+  gap:30px;
+}
+
+/* CARD */
+
+.service-card{
+
+  background:#ffffff;
+
+  border-radius:24px;
+
+  padding:42px;
+
+  min-height:320px;
+
+  box-shadow:0 10px 35px rgba(0,0,0,0.05);
+
+  transition:0.3s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-8px);
+}
+
+/* ICON */
+
+.icon-box{
+
+  width:96px;
+  height:96px;
+
+  background:#f3e9ff;
+
+  border-radius:14px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:40px;
+}
+
+.icon-box i{
+  font-size:42px;
+  color:#9b30ff;
+}
+
+/* TITLE */
+
+.service-card h2{
+
+  font-size:22px;
+  font-weight:700;
+
+  color:#111;
+
+  margin-bottom:24px;
+}
+
+/* DESCRIPTION */
+
+.service-card p{
+
+  font-size:18px;
+  line-height:1.8;
+
+  color:#667085;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+  .services-grid{
+    grid-template-columns:1fr;
+    width:100%;
+  }
+
+  .service-card{
+    min-height:auto;
+  }
+}
+
+@media(max-width:600px){
+
+  .service-card{
+    padding:30px;
+  }
+
+  .icon-box{
+    width:80px;
+    height:80px;
+  }
+
+  .icon-box i{
+    font-size:34px;
+  }
+
+  .service-card h2{
+    font-size:20px;
+  }
+
+  .service-card p{
+    font-size:16px;
+  }
+}
+
   </style>
 </head>
 
 <body>
 
+  <!-- CARD 1 -->
   <div class="container">
 
-    <!-- Left Side -->
     <div class="image-section">
 
       <div class="image-box">
@@ -242,14 +395,21 @@
       </div>
 
       <div class="social-box">
-        <a href="https://iosdeveloperlive.blogspot.com/"><i class="fas fa-globe"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-behance"></i></a>
+        <a href="https://iosdeveloperlive.blogspot.com/">
+          <i class="fas fa-globe"></i>
+        </a>
+
+        <a href="#">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="#">
+          <i class="fab fa-behance"></i>
+        </a>
       </div>
 
     </div>
 
-    <!-- Right Side -->
     <div class="content">
 
       <h1>
@@ -257,16 +417,15 @@
       </h1>
 
       <p>
-          I design and develop high-quality iOS applications specializing in
-  Swift, SwiftUI, UIKit, BLE connectivity, IoT solutions, and scalable
-  mobile architectures. My passion is creating smooth, modern, and
-  user-friendly mobile experiences.
+        I design and develop high-quality iOS applications specializing in
+        Swift, SwiftUI, UIKit, BLE connectivity, IoT solutions, and scalable
+        mobile architectures.
       </p>
 
       <p>
         I have 7+ years of experience developing mobile applications for
-  industries including smart home automation Wi-Fi and Bluetooth, flight booking, hotel
-  booking, video streaming, and connected IoT devices, Firebase.
+        smart home automation, booking systems, video streaming,
+        connected IoT devices, and Firebase integrations.
       </p>
 
       <div class="buttons">
@@ -278,6 +437,115 @@
         <a href="#" class="btn btn-outline">
           <i class="fa-solid fa-download"></i>
           Download CV
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="container">
+
+    <div class="image-section">
+
+      <div class="services-grid">
+
+    <!-- BOX 1 -->
+    <div class="service-card">
+
+      <div class="icon-box">
+        <i class="fa-regular fa-calendar-check"></i>
+      </div>
+
+      <h2>1. Research</h2>
+
+      <p>
+        Design meets function in every pixel,
+        blending clarity with intuitive motion.
+      </p>
+
+    </div>
+
+    <!-- BOX 2 -->
+    <div class="service-card">
+
+      <div class="icon-box">
+        <i class="fa-solid fa-chart-line"></i>
+      </div>
+
+      <h2>2. Analyze</h2>
+
+      <p>
+        Crafting clean, thoughtful interfaces where
+        form flows seamlessly into function and clarity.
+      </p>
+
+    </div>
+
+    <!-- BOX 3 -->
+    <div class="service-card">
+
+      <div class="icon-box">
+        <i class="fa-solid fa-pencil"></i>
+      </div>
+
+      <h2>3. Design</h2>
+
+      <p>
+        I design seamless digital experiences with precision,
+        purpose, and a touch of elegance.
+      </p>
+
+    </div>
+
+    <!-- BOX 4 -->
+    <div class="service-card">
+
+      <div class="icon-box">
+        <i class="fa-solid fa-laptop"></i>
+      </div>
+
+      <h2>4. Launch</h2>
+
+      <p>
+        I craft digital products where thoughtful design meets
+        performance-driven responsive development.
+      </p>
+
+    </div>
+
+  </div>
+
+    </div>
+
+    <div class="content">
+      <h1>
+        Work Process
+      </h1>
+      <h3>
+        Mobile App Architect & UI Specialist
+      </h3>
+      <p>
+        Experienced in designing beautiful mobile interfaces and scalable
+        app architecture for iOS platforms using modern Apple technologies.
+      </p>
+
+      <p>
+        Specialized in BLE devices, Wi-Fi communication, SwiftUI,
+        Firebase, REST APIs, and enterprise mobile applications.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#" class="btn btn-primary">
+          View Portfolio
+        </a>
+
+        <a href="#" class="btn btn-outline">
+          <i class="fa-solid fa-envelope"></i>
+          Contact Me
         </a>
 
       </div>
