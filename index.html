@@ -95,6 +95,30 @@
 
       position:relative;
     }
+    .container2{
+
+  width:100%;
+  max-width:1200px;
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:70px;
+
+  display:flex;
+
+  /* IMPORTANT */
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  gap:40px;
+
+  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+
+  position:relative;
+}
 
     /* LEFT */
     .image-section{
@@ -209,7 +233,12 @@
 
     /* TABLET */
     @media(max-width:1100px){
-
+      
+      .container2{
+    align-items:center;
+    text-align:center;
+      
+     }
       .container{
         flex-direction:column;
         text-align:center;
@@ -223,6 +252,9 @@
       .buttons{
         justify-content:center;
       }
+      .container2 .buttons{
+    justify-content:center;
+  }
 
       .image-section{
         width:100%;
@@ -238,6 +270,9 @@
       }
 
       .container{
+        padding:35px 20px 70px;
+      }
+      .container2{
         padding:35px 20px 70px;
       }
 
@@ -444,9 +479,19 @@
   </div>
 
   <!-- CARD 2 -->
-  <div class="container">
+  <div class="container2">
+    <h1>
+        Work Process
+      </h1>
+      <h3>
+        Mobile App Architect & UI Specialist
+      </h3>
+      <p>
+        Experienced in designing beautiful mobile interfaces and scalable
+        app architecture for iOS platforms using modern Apple technologies. Specialized in BLE devices, Wi-Fi communication, SwiftUI,
+        Firebase, REST APIs, and enterprise mobile applications.
+      </p>
     <div class="services-grid">
-
     <!-- BOX 1 -->
     <div class="service-card">
 
@@ -507,26 +552,8 @@
       </p>
 
     </div>
-
   </div>
-    <div class="content">
-      <h1>
-        Work Process
-      </h1>
-      <h3>
-        Mobile App Architect & UI Specialist
-      </h3>
-      <p>
-        Experienced in designing beautiful mobile interfaces and scalable
-        app architecture for iOS platforms using modern Apple technologies.
-      </p>
-
-      <p>
-        Specialized in BLE devices, Wi-Fi communication, SwiftUI,
-        Firebase, REST APIs, and enterprise mobile applications.
-      </p>
-
-      <div class="buttons">
+  <div class="buttons">
 
         <a href="#" class="btn btn-primary">
           View Portfolio
@@ -538,9 +565,6 @@
         </a>
 
       </div>
-
-    </div>
-
   </div>
 
 </body>
